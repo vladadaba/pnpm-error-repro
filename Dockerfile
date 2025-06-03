@@ -1,4 +1,4 @@
-FROM node:22.14.0-alpine
+FROM node:22.14.0-alpine AS builder
 ARG CI_COMMIT_SHA
 
 WORKDIR /build
@@ -10,13 +10,12 @@ RUN pnpm config set store-dir .pnpm-store
 RUN pnpm install --frozen-lockfile
 WORKDIR /build/apps/example-app
 RUN pnpm build
-# Legacy flag can be removed once https://github.com/pnpm/pnpm/issues/9283 is fixed
-RUN pnpm --legacy --filter "$(node -e "console.log(require('./package.json').name)")" --prod deploy /deploy
+RUN pnpm --filter "$(node -e "console.log(require('./package.json').name)")" --prod deploy /deploy
 
 
 FROM node:22.14.0-alpine
 WORKDIR /app
-COPY --from=0 /deploy .
+COPY --from=builder /deploy .
 
 ENV PORT=3000
 EXPOSE 3000
