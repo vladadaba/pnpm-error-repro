@@ -3,10 +3,20 @@ lockfileVersion: '9.0'
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
+  injectWorkspacePackages: true
+
+overrides:
+  axios: 1.7.4
 
 importers:
 
   .:
+    devDependencies:
+      prettier:
+        specifier: ^3.4.2
+        version: 3.5.3
+
+  apps/example-app:
     dependencies:
       '@nestjs/common':
         specifier: ^11.0.1

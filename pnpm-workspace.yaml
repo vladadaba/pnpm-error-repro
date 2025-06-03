@@ -1,0 +1,8 @@
+packages:
+  - apps/*
+
+overrides:
+  "axios": 1.7.4
+
+linkWorkspacePackages: deep
+injectWorkspacePackages: true
