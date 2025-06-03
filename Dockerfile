@@ -7,8 +7,8 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 ADD . .
 RUN pnpm config set store-dir .pnpm-store
-RUN pnpm install --frozen-lockfile
 WORKDIR /build/apps/example-app
+RUN pnpm --filter "$(node -e "console.log(require('./package.json').name)")" install --frozen-lockfile
 RUN pnpm build
 RUN pnpm --filter "$(node -e "console.log(require('./package.json').name)")" --prod deploy /deploy
 
