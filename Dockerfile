@@ -20,4 +20,4 @@ COPY --from=0 /deploy .
 
 ENV PORT=3000
 EXPOSE 3000
-ENTRYPOINT [ "node", "/app/build/index.js" ]
+ENTRYPOINT [ "node", "/app/build/main.js" ]
