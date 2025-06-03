@@ -37,6 +37,7 @@ catalogs:
 
 overrides:
   "babel-loader": 9.1.3
+  "react-dom": 18.2.0
 
 linkWorkspacePackages: deep
 injectWorkspacePackages: true
