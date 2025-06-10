@@ -31,7 +31,8 @@
     "axios": "catalog:common",
     "lodash": "^4.17.21",
     "moment": "^2.30.1",
-    "uuid": "^11.0.5"
+    "uuid": "^11.0.5",
+    "@jitsi/react-native-sdk": "^2.2.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "catalog:common",
@@ -77,5 +78,5 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   },
-  "packageManager": "pnpm@10.11.1"
+  "packageManager": "pnpm@10.12.1"
 }

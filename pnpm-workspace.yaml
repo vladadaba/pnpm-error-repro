@@ -40,4 +40,5 @@ overrides:
   "react-dom": 18.2.0
 
 linkWorkspacePackages: deep
+forceLegacyDeploy: true
 injectWorkspacePackages: true
